@@ -23,7 +23,7 @@ export default function Home({
       </Head>
       <section className={utilStyles.padding1px}>
         {allPostsData.map(({ id, date, title, contentHtml }) => (
-          <article>
+          <article key={id}>
             <Link href={`/blog/posts/${id}`}>
               <a>
                 <h1 className={utilStyles.headingXl}>{title}</h1>

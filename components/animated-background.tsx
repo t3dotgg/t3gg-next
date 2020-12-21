@@ -60,16 +60,7 @@ export const AnimatedBackground: React.FC = () => {
     };
   }, []);
 
-  return (
-    <>
-      <meta
-        name="viewport"
-        content="width=device-width; 
-    initial-scale=1; maximum-scale=1; user-scalable=0;"
-      />
-      <canvas className="animation" id="homepage-animation" />
-    </>
-  );
+  return <canvas className="animation" id="homepage-animation" />;
 };
 
 const generateBlobProps: () => BlobProps = () => {
