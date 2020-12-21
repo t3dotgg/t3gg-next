@@ -39,4 +39,21 @@ a:hover {
   flex-direction: column;
   justify-content: space-between;
   min-height: 400px;
+
+  background-color: rgba(255, 255, 255, 0.9);
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+.animation {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+.blob {
+  position: absolute;
+  border: 1px solid black;
 }

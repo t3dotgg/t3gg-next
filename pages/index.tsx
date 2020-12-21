@@ -5,6 +5,7 @@ import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/date";
 import { GetStaticProps } from "next";
+import { AnimatedBackground } from "../components/animated-background";
 
 const HomeBody = () => (
   <div className="home-page--content">
@@ -43,6 +44,7 @@ export default function Home() {
   return (
     <div className="home-page">
       <HomeBody />
+      <AnimatedBackground />
     </div>
   );
 }
