@@ -30,6 +30,7 @@ a:hover {
 .home-page--content {
   /* Positioning within page */
   min-width: 300px;
+  width: max-content;
   max-width: calc(90% - 2rem);
   max-height: calc(90% - 2rem);
   position: fixed;
