@@ -34,6 +34,7 @@ a:hover {
   border: 1px solid black;
   padding: 2rem;
   border-radius: 0.5rem;
+  margin: 1rem;
 
   display: flex;
   flex-direction: column;
@@ -49,9 +50,4 @@ a:hover {
 .animation {
   position: absolute;
   z-index: -1;
-}
-
-.blob {
-  position: absolute;
-  border: 1px solid black;
 }

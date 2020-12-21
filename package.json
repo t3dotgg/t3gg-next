@@ -10,6 +10,7 @@
   "dependencies": {
     "date-fns": "^2.11.1",
     "gray-matter": "^4.0.2",
+    "ios-inner-height": "^1.1.1",
     "next": "^10.0.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",

@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import * as innerHeight from "ios-inner-height";
 
 export const AnimatedBackground: React.FC = () => {
   useEffect(() => {
@@ -7,7 +8,7 @@ export const AnimatedBackground: React.FC = () => {
     ) as HTMLCanvasElement;
     const ctx = c.getContext("2d");
     ctx.canvas.width = window.innerWidth;
-    ctx.canvas.height = window.innerHeight;
+    ctx.canvas.height = innerHeight();
 
     let blobs: BlobProps[] = [];
     for (let i = 0; i < window.innerWidth; i += 100) {
@@ -23,7 +24,7 @@ export const AnimatedBackground: React.FC = () => {
       ctx.stroke();
     };
     const animate = () => {
-      ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+      ctx.clearRect(0, 0, window.innerWidth, innerHeight());
       blobs = blobs.map((blob) => {
         const { size } = blob;
         let { x, y } = blob.location;
@@ -32,7 +33,7 @@ export const AnimatedBackground: React.FC = () => {
         if (x - size > window.innerWidth) {
           x = -size;
         }
-        if (y - size > window.innerHeight) {
+        if (y - size > innerHeight()) {
           y = -size;
         }
 
