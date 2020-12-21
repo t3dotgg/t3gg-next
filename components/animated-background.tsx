@@ -1,83 +1,84 @@
 import React, { useEffect } from "react";
 
 export const AnimatedBackground: React.FC = () => {
-  const [blobProps, setBlobProps] = React.useState<BlobProps[]>([]);
   useEffect(() => {
-    const generatedBlobs: BlobProps[] = [];
-    for (let i = 0; i < window.innerWidth; i += 50) {
-      generatedBlobs.push(generateBlobProps());
+    const c = document.getElementById(
+      "homepage-animation"
+    ) as HTMLCanvasElement;
+    const ctx = c.getContext("2d");
+    ctx.canvas.width = window.innerWidth;
+    ctx.canvas.height = window.innerHeight;
+
+    let blobs: BlobProps[] = [];
+    for (let i = 0; i < window.innerWidth; i += 100) {
+      blobs.push(generateBlobProps());
     }
-    setBlobProps(generatedBlobs);
+
+    const drawBlob = (props: BlobProps) => {
+      const { x, y } = props.location;
+      ctx.fillStyle = props.color;
+      ctx.beginPath();
+      ctx.arc(x ?? 0, y ?? 0, props.size, 0, 2 * Math.PI);
+      ctx.fill();
+      ctx.stroke();
+    };
+    const animate = () => {
+      ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+      blobs = blobs.map((blob) => {
+        const { size } = blob;
+        let { x, y } = blob.location;
+        x += 5;
+        y += 2;
+        if (x - size > window.innerWidth) {
+          x = -size;
+        }
+        if (y - size > window.innerHeight) {
+          y = -size;
+        }
+
+        return {
+          ...blob,
+          location: {
+            x: x,
+            y: y,
+          },
+        };
+      });
+      blobs.forEach(drawBlob);
+      requestAnimationFrame(animate);
+    };
+    animate();
   }, []);
 
   return (
-    <div className="animation">
-      {blobProps.map((props, index) => {
-        return <Blob {...props} key={index} />;
-      })}
-    </div>
+    <>
+      <meta
+        name="viewport"
+        content="width=device-width; 
+    initial-scale=1; maximum-scale=1; user-scalable=0;"
+      />
+      <canvas className="animation" id="homepage-animation" />
+    </>
   );
 };
 
-const colorIndexes: (0 | 1 | 2)[] = [0, 1, 2];
-
 const generateBlobProps: () => BlobProps = () => {
   return {
-    size: Math.floor(Math.random() * 200) + 100,
-    color: colorIndexes[Math.floor(Math.random() * colorIndexes.length)],
-    startLocation: {
+    size: Math.floor(Math.random() * 150) + 80,
+    color: colors[Math.floor(Math.random() * colors.length)],
+    location: {
       x: Math.floor(Math.random() * window.innerWidth),
       y: Math.floor(Math.random() * window.innerHeight),
     },
   };
 };
-
-const colors = ["#E8DDFF", "#D1C8E6", "#AEA6BF"];
-
+type Colors = "#E8DDFF" | "#D1C8E6" | "#AEA6BF";
+const colors: Colors[] = ["#E8DDFF", "#D1C8E6", "#AEA6BF"];
 interface BlobProps {
   size: number;
-  color: 0 | 1 | 2;
-  startLocation: {
+  color: Colors;
+  location: {
     x: number;
     y: number;
   };
 }
-
-export const Blob: React.FC<BlobProps> = ({ size, color, startLocation }) => {
-  const [bl, setBL] = React.useState<{
-    x: number;
-    y: number;
-  }>(startLocation);
-
-  const move = () => {
-    setBL(({ x, y }) => {
-      if (x - size > window.innerWidth) {
-        x = -size;
-      }
-      if (y - size > window.innerHeight) {
-        y = -size;
-      }
-      return { x: x + 5, y: y + 2 };
-    });
-    requestAnimationFrame(move);
-  };
-
-  useEffect(() => {
-    const request = requestAnimationFrame(move);
-    return () => cancelAnimationFrame(request);
-  }, []);
-
-  const staticStyles: React.CSSProperties = {
-    width: size + "px",
-    height: size + "px",
-    borderRadius: size / 2 + "px",
-    backgroundColor: colors[color],
-  };
-
-  return (
-    <div
-      className="blob"
-      style={{ ...staticStyles, top: bl.y + "px", left: bl.x + "px" }}
-    />
-  );
-};
