@@ -9,7 +9,7 @@ I'm Theo. I am nerdy about a lot of stuff. I want to start writing more about th
 
 This blog is also built on things I'm nerdy about. My personal site was previously a trim [Gatsby](https://www.gatsbyjs.com/) app, shipping ~200kb down the pipe. I'm _way too proud_ that this site, blog and all, is under 100kb.
 
-tl;dr on the tech - [Next JS](https://nextjs.org/) rewrite deployed on [Netlify](https://netlify.com)
+tl;dr on the tech - [Next.js](https://nextjs.org/) rewrite deployed on [Netlify](https://netlify.com)
 
 It's nothing too fancy. Still pumped about the [lighthouse score tho](/images/lighthouse-scores.png)
 
