@@ -60,3 +60,15 @@ a:hover {
   top: 0;
   right: 0;
 }
+
+.accent-one {
+  position: fixed;
+  z-index: -1;
+  top: -20vw;
+  right: -20vw;
+  width: 40vw;
+  height: 40vw;
+  border-radius: 20vw;
+  background-color: #e8ddff;
+  border: 1px solid black;
+}
