@@ -25,22 +25,29 @@ a:hover {
 .home-page {
   width: 100vw;
   height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .home-page--content {
-  border: 1px solid black;
-  padding: 2rem;
-  border-radius: 0.5rem;
-  margin: 1rem;
+  /* Positioning within page */
+  height: 400px;
+  width: 400px;
+  max-width: calc(90% - 2rem);
+  max-height: calc(90% - 2rem);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
+  /* Positioning of children */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 400px;
 
+  /* Styling */
+  border: 1px solid black;
+  padding: 2rem;
+  border-radius: 0.5rem;
   background-color: rgba(255, 255, 255, 0.9);
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding-box;
@@ -50,4 +57,6 @@ a:hover {
 .animation {
   position: absolute;
   z-index: -1;
+  top: 0;
+  right: 0;
 }

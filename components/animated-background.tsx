@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import * as innerHeight from "ios-inner-height";
+import { disableBodyScroll, clearAllBodyScrollLocks } from "body-scroll-lock";
 
 const runAnimations = () => {
   const c = document.getElementById("homepage-animation") as HTMLCanvasElement;
@@ -52,7 +53,9 @@ const runAnimations = () => {
 export const AnimatedBackground: React.FC = () => {
   useEffect(() => {
     const cancel = runAnimations();
+    disableBodyScroll(document.getElementById("homepage-animation"));
     return () => {
+      clearAllBodyScrollLocks();
       cancelAnimationFrame(cancel);
     };
   }, []);

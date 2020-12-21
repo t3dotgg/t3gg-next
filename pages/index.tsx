@@ -1,9 +1,5 @@
-import Head from "next/head";
-import Layout, { siteTitle } from "../components/layout";
-import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
-import Date from "../components/date";
 import { GetStaticProps } from "next";
 import { AnimatedBackground } from "../components/animated-background";
 import Page from "../components/page";
@@ -15,15 +11,15 @@ const HomeBody = () => (
       <p>{"I'm Theo, and I like to build things"}</p>
       <p>
         {"Full stack engineer at "}
-        <a href="https://twitch.tv">Twitch</a>
+        <a href="https://twitch.tv/theo">Twitch</a>
         {" since January 2017"}
       </p>
       <p>I like skateboards, music, art, and various nonsense</p>
       <p>
-        Check out my <a href="https://github.com/theobr">Github</a>,{" "}
-        <a href="https://twitter.com/TheoOnTwitch">Twitter</a>, and{" "}
+        Take a look at my <a href="https://github.com/theobr">Github</a>,{" "}
+        <a href="https://twitter.com/TheoOnTwitch">Twitter</a>, or{" "}
         <a href="https://github.com/TheoBr/TheoBr/blob/master/about/resume.md">
-          my resume
+          resume
         </a>
       </p>
     </div>
@@ -43,8 +39,8 @@ export default function Home() {
     <Page>
       <div className="home-page">
         <HomeBody />
-        <AnimatedBackground />
       </div>
+      <AnimatedBackground />
     </Page>
   );
 }
