@@ -6,6 +6,7 @@ import Link from "next/link";
 import Date from "../components/date";
 import { GetStaticProps } from "next";
 import { AnimatedBackground } from "../components/animated-background";
+import Page from "../components/page";
 
 const HomeBody = () => (
   <div className="home-page--content">
@@ -42,10 +43,12 @@ const HomeBody = () => (
 
 export default function Home() {
   return (
-    <div className="home-page">
-      <HomeBody />
-      <AnimatedBackground />
-    </div>
+    <Page>
+      <div className="home-page">
+        <HomeBody />
+        <AnimatedBackground />
+      </div>
+    </Page>
   );
 }
 

@@ -11,9 +11,10 @@ export const AnimatedBackground: React.FC = () => {
     ctx.canvas.height = innerHeight();
 
     let blobs: BlobProps[] = [];
-    for (let i = 0; i < window.innerWidth; i += 100) {
+    for (let i = 0; i < window.innerWidth; i += 60) {
       blobs.push(generateBlobProps());
     }
+    blobs.sort((a, b) => a.size - b.size);
 
     const drawBlob = (props: BlobProps) => {
       const { x, y } = props.location;
@@ -28,8 +29,8 @@ export const AnimatedBackground: React.FC = () => {
       blobs = blobs.map((blob) => {
         const { size } = blob;
         let { x, y } = blob.location;
-        x += 5;
-        y += 2;
+        x += size / 60;
+        y += size / 60;
         if (x - size > window.innerWidth) {
           x = -size;
         }
