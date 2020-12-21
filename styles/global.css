@@ -67,3 +67,8 @@ blockquote {
   margin: 1rem 1rem;
   font-style: italic;
 }
+
+article {
+  line-height: 1.6;
+  font-size: 18px;
+}
