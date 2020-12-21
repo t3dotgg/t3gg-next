@@ -29,8 +29,7 @@ a:hover {
 
 .home-page--content {
   /* Positioning within page */
-  height: 400px;
-  width: 400px;
+  min-width: 300px;
   max-width: calc(90% - 2rem);
   max-height: calc(90% - 2rem);
   position: fixed;
