@@ -72,3 +72,10 @@ a:hover {
   background-color: #e8ddff;
   border: 1px solid black;
 }
+
+blockquote {
+  border-left: 0.3em solid rgba(0, 0, 0, 0.5);
+  padding: 0 1rem;
+  margin: 1rem 1rem;
+  font-style: italic;
+}
