@@ -22,20 +22,17 @@ const HomeBody = () => (
       <p>
         Check out my <a href="https://github.com/theobr">Github</a>,{" "}
         <a href="https://twitter.com/TheoOnTwitch">Twitter</a>, and{" "}
-        <a href="https://twitch.tv/Theo">Twitch Channel</a>
+        <a href="https://github.com/TheoBr/TheoBr/blob/master/about/resume.md">
+          my resume
+        </a>
       </p>
     </div>
     <div className="home-page--content--footer">
       <p>
-        You can find{" "}
-        <a href="https://github.com/TheoBr/TheoBr/blob/master/about/resume.md">
-          my resume
-        </a>{" "}
-        and{" "}
-        <a href="https://github.com/TheoBr/TheoBr/blob/master/about/projects.md">
-          my projects list
-        </a>{" "}
-        on <a href="https://github.com/TheoBr/TheoBr">Github</a>
+        Oh, also,{" "}
+        <Link href="/blog">
+          <a>check out my new blog</a>
+        </Link>
       </p>
     </div>
   </div>
