@@ -1,6 +1,4 @@
-import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
-import { GetStaticProps } from "next";
 import { AnimatedBackground } from "../components/animated-background";
 import Page from "../components/page";
 
