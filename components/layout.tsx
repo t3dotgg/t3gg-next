@@ -12,8 +12,8 @@ export default function Layout({
   home?: boolean;
 }) {
   return (
-    <>
-      <div className="accent-one" />
+    <div className={styles.scrollablePage}>
+      <div className={styles.accentOne} />
       <div className={styles.container}>
         <Head>
           <link rel="icon" href="/icon.png" />
@@ -36,6 +36,6 @@ export default function Layout({
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 }

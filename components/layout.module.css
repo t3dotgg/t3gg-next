@@ -4,22 +4,23 @@
   margin: 3rem auto 6rem;
 }
 
-.header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.headerImage {
-  width: 6rem;
-  height: 6rem;
-}
-
-.headerHomeImage {
-  width: 8rem;
-  height: 8rem;
-}
-
 .backToHome {
   margin: 3rem 0 0;
+}
+
+.accentOne {
+  position: absolute;
+  z-index: -1;
+  top: -20vw;
+  right: -20vw;
+  width: 40vw;
+  height: 40vw;
+  border-radius: 20vw;
+  background-color: #e8ddff;
+  border: 1px solid black;
+}
+
+.scrollablePage {
+  overflow-y: scroll;
+  position: relative;
 }
