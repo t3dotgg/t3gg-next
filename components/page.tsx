@@ -16,7 +16,7 @@ export default function Page({
         <link rel="icon" href="/icon.png" />
         <meta name="description" content={description} />
         <meta name="twitter:image" content="/images/twitter.png" />
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content="@theoontwitch" />
         <meta property="og:title" content={siteTitle} />
         <meta property="og:description" content={description} />
