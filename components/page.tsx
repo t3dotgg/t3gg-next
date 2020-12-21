@@ -15,12 +15,12 @@ export default function Page({
       <Head>
         <link rel="icon" href="/icon.png" />
         <meta name="description" content={description} />
-        <meta name="twitter:image" content="/images/twitter.png" />
+        <meta name="twitter:image" content="https://t3.gg/images/twitter.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content="@theoontwitch" />
         <meta property="og:title" content={siteTitle} />
         <meta property="og:description" content={description} />
-        <meta property="og:image" content="/images/twitter.png" />
+        <meta property="og:image" content="https://t3.gg/images/twitter.png" />
         <title>{siteTitle}</title>
       </Head>
       {children}
