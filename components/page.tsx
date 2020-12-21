@@ -1,6 +1,8 @@
 import Head from "next/head";
 
 export const siteTitle = "Theo Browne";
+const description =
+  "Theo Browne is a full stack engineer and React expert with years of experience working at Twitch.tv";
 
 export default function Page({
   children,
@@ -12,13 +14,13 @@ export default function Page({
     <>
       <Head>
         <link rel="icon" href="/icon.png" />
-        <meta
-          name="description"
-          content="Theo Browne is a full stack engineer and React expert with years of experience working at Twitch.tv"
-        />
+        <meta name="description" content={description} />
         <meta name="twitter:image" content="/images/twitter.png" />
         <meta name="twitter:card" content="summary" />
-        <meta name="og:title" content={siteTitle} />
+        <meta name="twitter:creator" content="@theoontwitch" />
+        <meta property="og:title" content={siteTitle} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content="/images/twitter.png" />
         <title>{siteTitle}</title>
       </Head>
       {children}
