@@ -44,12 +44,3 @@ export default function Home() {
     </Page>
   );
 }
-
-export const getStaticProps: GetStaticProps = async () => {
-  const allPostsData = getSortedPostsData();
-  return {
-    props: {
-      allPostsData,
-    },
-  };
-};

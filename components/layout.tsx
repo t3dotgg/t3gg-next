@@ -32,10 +32,16 @@ export default function Layout({
         </Head>
         <h3>Theo's Blog</h3>
         <main>{children}</main>
-        {!home && (
+        {home ? (
+          <div className={styles.backToHome}>
+            <Link href="/">
+              <a>← Back to homepage</a>
+            </Link>
+          </div>
+        ) : (
           <div className={styles.backToHome}>
             <Link href="/blog">
-              <a>← Back to home</a>
+              <a>← Back to all articles</a>
             </Link>
           </div>
         )}
