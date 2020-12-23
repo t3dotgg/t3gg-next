@@ -20,7 +20,10 @@ export default function Post({
     <Layout>
       <Head>
         <title>{postData.title}</title>
-        <meta name="twitter:image" content="https://t3.gg/images/twitter.png" />
+        <meta
+          name="twitter:image"
+          content={postData.imageURL ?? "https://t3.gg/images/twitter.png"}
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content="@theoontwitch" />
         <meta property="og:title" content={postData.title} />
