@@ -22,5 +22,6 @@
 
 .scrollablePage {
   overflow-y: scroll;
+  overflow-x: hidden;
   position: relative;
 }

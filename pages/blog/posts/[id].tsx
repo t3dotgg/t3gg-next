@@ -12,12 +12,23 @@ export default function Post({
     title: string;
     date: string;
     contentHtml: string;
+    description: string;
+    imageURL?: string;
   };
 }) {
   return (
     <Layout>
       <Head>
         <title>{postData.title}</title>
+        <meta name="twitter:image" content="https://t3.gg/images/twitter.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:creator" content="@theoontwitch" />
+        <meta property="og:title" content={postData.title} />
+        <meta property="og:description" content={postData.description} />
+        <meta
+          property="og:image"
+          content={postData.imageURL ?? "https://t3.gg/images/twitter.png"}
+        />
       </Head>
       <article>
         <h1 className={utilStyles.headingXl}>{postData.title}</h1>

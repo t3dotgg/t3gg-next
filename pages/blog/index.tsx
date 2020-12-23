@@ -6,6 +6,9 @@ import Link from "next/link";
 import Date from "../../components/date";
 import { GetStaticProps } from "next";
 
+const description =
+  "Theo's blog. Dumping ground for thoughts on tech, audio gear, life, and cats";
+
 export default function Home({
   allPostsData,
 }: {
@@ -20,6 +23,12 @@ export default function Home({
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
+        <meta name="twitter:image" content="https://t3.gg/images/twitter.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:creator" content="@theoontwitch" />
+        <meta property="og:title" content={siteTitle} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content="https://t3.gg/images/twitter.png" />
       </Head>
       <section className={utilStyles.padding1px}>
         {allPostsData.map(({ id, date, title, contentHtml }) => (
