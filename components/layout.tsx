@@ -17,8 +17,6 @@ export default function Layout({
       <div className={styles.container}>
         <Head>
           <link rel="icon" href="/icon.png" />
-          <meta name="description" content="Theo's Blog" />
-          <meta name="og:title" content={siteTitle} />
         </Head>
         <h3>Theo's Blog</h3>
         <main>{children}</main>
