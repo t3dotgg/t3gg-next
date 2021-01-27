@@ -25,7 +25,7 @@ export default function Home({
         <title>{siteTitle}</title>
         <meta name="twitter:image" content="https://t3.gg/images/twitter.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:creator" content="@theoontwitch" />
+        <meta name="twitter:creator" content="@t3dotgg" />
         <meta property="og:title" content={siteTitle} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content="https://t3.gg/images/twitter.png" />

@@ -15,7 +15,7 @@ const HomeBody = () => (
       <p>I like skateboards, music, art, and various nonsense</p>
       <p>
         Take a look at my <a href="https://github.com/theobr">Github</a>,{" "}
-        <a href="https://twitter.com/TheoOnTwitch">Twitter</a>, or{" "}
+        <a href="https://twitter.com/t3dotgg">Twitter</a>, or{" "}
         <a href="https://github.com/TheoBr/TheoBr/blob/master/about/resume.md">
           resume
         </a>

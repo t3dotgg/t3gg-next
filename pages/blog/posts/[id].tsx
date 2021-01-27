@@ -25,7 +25,7 @@ export default function Post({
           content={postData.imageURL ?? "https://t3.gg/images/twitter.png"}
         />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:creator" content="@theoontwitch" />
+        <meta name="twitter:creator" content="@t3dotgg" />
         <meta property="og:title" content={postData.title} />
         <meta property="og:description" content={postData.description} />
         <meta
