@@ -9,8 +9,12 @@ const HomeBody = () => (
       <p>{"I'm Theo, and I like to build things"}</p>
       <p>
         {"Full stack engineer at "}
-        <a href="https://twitch.tv/theo">Twitch</a>
+        <a href="https://tt.fm">Turntable</a>
         {" since January 2017"}
+      </p>
+      <p>
+        Alumni of <a href="https://twitch.tv">Twitch</a> and{" "}
+        <a href="https://rpi.edu">RPI</a>
       </p>
       <p>I like skateboards, music, art, and various nonsense</p>
       <p>
