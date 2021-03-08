@@ -10,7 +10,7 @@ const HomeBody = () => (
       <p>
         {"Full stack engineer at "}
         <a href="https://tt.fm">Turntable</a>
-        {" since January 2017"}
+        {" since February 2021"}
       </p>
       <p>
         Alumni of <a href="https://twitch.tv">Twitch</a> and{" "}
