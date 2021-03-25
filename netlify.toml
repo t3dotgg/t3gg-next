@@ -3,4 +3,5 @@
   publish = "out"
 
 [[plugins]]
+  NEXT_SERVERLESS = "false"
   package = "@netlify/plugin-nextjs"
