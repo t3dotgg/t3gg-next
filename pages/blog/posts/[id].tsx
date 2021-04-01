@@ -1,20 +1,13 @@
 import Layout from "../../../components/layout";
-import { getAllPostIds, getPostData } from "../../../lib/posts";
+import { getAllPostIds, getPostData, PostData } from "../../../lib/posts";
 import Head from "next/head";
-import Date from "../../../components/date";
-import utilStyles from "../../../styles/utils.module.css";
 import { GetStaticProps, GetStaticPaths } from "next";
+import Post from "../../../components/post";
 
-export default function Post({
+export default function PostPageView({
   postData,
 }: {
-  postData: {
-    title: string;
-    date: string;
-    contentHtml: string;
-    description: string;
-    imageURL?: string;
-  };
+  postData: PostData;
 }) {
   return (
     <Layout>
@@ -34,11 +27,7 @@ export default function Post({
         />
       </Head>
       <article>
-        <h1 className={utilStyles.headingXl}>{postData.title}</h1>
-        <div className={utilStyles.lightText}>
-          <Date dateString={postData.date} />
-        </div>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+      <Post postData={postData} singlePostPage />
       </article>
     </Layout>
   );

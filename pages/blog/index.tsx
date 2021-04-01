@@ -1,10 +1,9 @@
 import Head from "next/head";
 import Layout, { siteTitle } from "../../components/layout";
 import utilStyles from "../../styles/utils.module.css";
-import { getSortedPostsData } from "../../lib/posts";
-import Link from "next/link";
-import Date from "../../components/date";
+import { getSortedPostsData, PostData } from "../../lib/posts";
 import { GetStaticProps } from "next";
+import Post from "../../components/post";
 
 const description =
   "Theo's blog. Dumping ground for thoughts on tech, audio gear, life, and cats";
@@ -12,12 +11,7 @@ const description =
 export default function Home({
   allPostsData,
 }: {
-  allPostsData: {
-    date: string;
-    title: string;
-    id: string;
-    contentHtml: string;
-  }[];
+  allPostsData: PostData[];
 }) {
   return (
     <Layout home>
@@ -31,19 +25,9 @@ export default function Home({
         <meta property="og:image" content="https://t3.gg/images/twitter.png" />
       </Head>
       <section className={utilStyles.padding1px}>
-        {allPostsData.map(({ id, date, title, contentHtml }) => (
-          <article key={id}>
-            <Link href={`/blog/posts/${id}`}>
-              <a>
-                <h1 className={utilStyles.headingXl}>{title}</h1>
-              </a>
-            </Link>
-            <div className={utilStyles.lightText}>
-              <Date dateString={date} />
-            </div>
-            <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
-          </article>
-        ))}
+      {allPostsData.map((postData, index) => (
+        <Post postData={postData} key={index} />
+      ))}
       </section>
     </Layout>
   );
