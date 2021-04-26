@@ -11,10 +11,7 @@ export default function PostPageView({ postData }: { postData: PostData }) {
         <title>{postData.title}</title>
         <meta
           name="twitter:image"
-          content={
-            window.location.hostname +
-            (postData.imageURL ?? "/images/twitter.png")
-          }
+          content={postData.imageURL ?? "/images/twitter.png"}
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content="@t3dotgg" />
@@ -22,10 +19,7 @@ export default function PostPageView({ postData }: { postData: PostData }) {
         <meta property="og:description" content={postData.description} />
         <meta
           property="og:image"
-          content={
-            window.location.hostname +
-            (postData.imageURL ?? "/images/twitter.png")
-          }
+          content={postData.imageURL ?? "/images/twitter.png"}
         />
       </Head>
       <article>
