@@ -4,18 +4,17 @@ import Head from "next/head";
 import { GetStaticProps, GetStaticPaths } from "next";
 import Post from "../../../components/post";
 
-export default function PostPageView({
-  postData,
-}: {
-  postData: PostData;
-}) {
+export default function PostPageView({ postData }: { postData: PostData }) {
   return (
     <Layout>
       <Head>
         <title>{postData.title}</title>
         <meta
           name="twitter:image"
-          content={postData.imageURL ?? "https://t3.gg/images/twitter.png"}
+          content={
+            window.location.hostname +
+            (postData.imageURL ?? "/images/twitter.png")
+          }
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content="@t3dotgg" />
@@ -23,11 +22,14 @@ export default function PostPageView({
         <meta property="og:description" content={postData.description} />
         <meta
           property="og:image"
-          content={postData.imageURL ?? "https://t3.gg/images/twitter.png"}
+          content={
+            window.location.hostname +
+            (postData.imageURL ?? "/images/twitter.png")
+          }
         />
       </Head>
       <article>
-      <Post postData={postData} singlePostPage />
+        <Post postData={postData} singlePostPage />
       </article>
     </Layout>
   );
