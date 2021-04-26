@@ -15,7 +15,7 @@ const getHostname = () => {
     return process.env.NEXT_PUBLIC_NETLIFY_SITE_URL;
 
   // For local dev
-  return "http://localhost:8080";
+  return "http://localhost:3000";
 };
 
 export default function PostPageView({ postData }: { postData: PostData }) {
