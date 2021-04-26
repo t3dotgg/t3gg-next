@@ -8,7 +8,8 @@ const getHostname = () => {
   if (process.env.NEXT_PUBLIC_VERCEL_URL)
     return "https://" + process.env.NEXT_PUBLIC_VERCEL_URL;
 
-  if (process.env.NETLIFY_SITE_URL) return process.env.NETLIFY_SITE_URL;
+  if (process.env.NEXT_PUBLIC_NETLIFY_SITE_URL)
+    return process.env.NEXT_PUBLIC_NETLIFY_SITE_URL;
 
   return "http://localhost:8080";
 };
