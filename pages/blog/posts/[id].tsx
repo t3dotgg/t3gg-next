@@ -4,18 +4,28 @@ import Head from "next/head";
 import { GetStaticProps, GetStaticPaths } from "next";
 import Post from "../../../components/post";
 
-export default function PostPageView({
-  postData,
-}: {
-  postData: PostData;
-}) {
+// Generates host url for things that need absolute paths
+const getHostname = () => {
+  // For vercel deploys
+  if (process.env.NEXT_PUBLIC_VERCEL_URL)
+    return "https://" + process.env.NEXT_PUBLIC_VERCEL_URL;
+
+  // For netlify deploys
+  if (process.env.NEXT_PUBLIC_NETLIFY_SITE_URL)
+    return process.env.NEXT_PUBLIC_NETLIFY_SITE_URL;
+
+  // For local dev
+  return "http://localhost:3000";
+};
+
+export default function PostPageView({ postData }: { postData: PostData }) {
   return (
     <Layout>
       <Head>
         <title>{postData.title}</title>
         <meta
           name="twitter:image"
-          content={postData.imageURL ?? "https://t3.gg/images/twitter.png"}
+          content={getHostname() + (postData.imageURL ?? "/images/twitter.png")}
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content="@t3dotgg" />
@@ -23,11 +33,11 @@ export default function PostPageView({
         <meta property="og:description" content={postData.description} />
         <meta
           property="og:image"
-          content={postData.imageURL ?? "https://t3.gg/images/twitter.png"}
+          content={getHostname() + (postData.imageURL ?? "/images/twitter.png")}
         />
       </Head>
       <article>
-      <Post postData={postData} singlePostPage />
+        <Post postData={postData} singlePostPage />
       </article>
     </Layout>
   );

@@ -2,10 +2,21 @@ import fs from "fs";
 import path from "path";
 import { bundleMDX } from "mdx-bundler";
 
-if(process.platform === "win32"){
-  process.env.ESBUILD_BINARY_PATH = path.join(process.cwd(), 'node_modules', 'esbuild', 'esbuild.exe')
-}else{
-  process.env.ESBUILD_BINARY_PATH = path.join(process.cwd(), 'node_modules', 'esbuild', 'bin', 'esbuild')
+if (process.platform === "win32") {
+  process.env.ESBUILD_BINARY_PATH = path.join(
+    process.cwd(),
+    "node_modules",
+    "esbuild",
+    "esbuild.exe"
+  );
+} else {
+  process.env.ESBUILD_BINARY_PATH = path.join(
+    process.cwd(),
+    "node_modules",
+    "esbuild",
+    "bin",
+    "esbuild"
+  );
 }
 
 const postsDirectory = path.join(process.cwd(), "posts");
@@ -18,6 +29,7 @@ export type PostData = {
   description?: string;
   imageURL?: string;
   twitterImageURL?: string;
+  hidden?: boolean;
 };
 
 export async function getSortedPostsData() {
@@ -39,19 +51,25 @@ export async function getSortedPostsData() {
       return {
         id,
         sourceMDX: code,
-        ...(frontmatter as { date: string; title: string }),
+        ...(frontmatter as {
+          date: string;
+          title: string;
+          hidden?: boolean;
+        }),
       };
     })
   );
 
   // Sort posts by date
-  return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
-      return 1;
-    } else {
-      return -1;
-    }
-  });
+  return allPostsData
+    .filter((post) => !post.hidden)
+    .sort((a, b) => {
+      if (a.date < b.date) {
+        return 1;
+      } else {
+        return -1;
+      }
+    });
 }
 
 export function getAllPostIds() {
