@@ -12,7 +12,7 @@ export default function PostPageView({ postData }: { postData: PostData }) {
         <meta
           name="twitter:image"
           content={
-            (process.env.VERCEL_URL ??
+            (process.env.NEXT_PUBLIC_VERCEL_URL ??
               process.env.DEPLOY_URL ??
               "localhost:8080") + (postData.imageURL ?? "/images/twitter.png")
           }
@@ -24,7 +24,7 @@ export default function PostPageView({ postData }: { postData: PostData }) {
         <meta
           property="og:image"
           content={
-            (process.env.VERCEL_URL ??
+            (process.env.NEXT_PUBLIC_VERCEL_URL ??
               process.env.DEPLOY_URL ??
               "localhost:8080") + (postData.imageURL ?? "/images/twitter.png")
           }
