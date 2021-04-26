@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next-remote-watch posts/*",
+    "dev": "NODE_ENV='development' next-remote-watch posts/*",
     "build": "next build",
     "start": "next start"
   },
