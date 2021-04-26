@@ -4,13 +4,17 @@ import Head from "next/head";
 import { GetStaticProps, GetStaticPaths } from "next";
 import Post from "../../../components/post";
 
+// Generates host url for things that need absolute paths
 const getHostname = () => {
+  // For vercel deploys
   if (process.env.NEXT_PUBLIC_VERCEL_URL)
     return "https://" + process.env.NEXT_PUBLIC_VERCEL_URL;
 
+  // For netlify deploys
   if (process.env.NEXT_PUBLIC_NETLIFY_SITE_URL)
     return process.env.NEXT_PUBLIC_NETLIFY_SITE_URL;
 
+  // For local dev
   return "http://localhost:8080";
 };
 
