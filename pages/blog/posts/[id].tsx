@@ -4,6 +4,15 @@ import Head from "next/head";
 import { GetStaticProps, GetStaticPaths } from "next";
 import Post from "../../../components/post";
 
+const getHostname = () => {
+  if (process.env.NEXT_PUBLIC_VERCEL_URL)
+    return "https://" + process.env.NEXT_PUBLIC_VERCEL_URL;
+  if (process.env.DEPLOY_URL) return "https://" + process.env.DEPLOY_URL;
+  if (process.env.SITE_URL) return "https://" + process.env.SITE_URL;
+
+  return "http://localhost:8080";
+};
+
 export default function PostPageView({ postData }: { postData: PostData }) {
   return (
     <Layout>
@@ -11,11 +20,7 @@ export default function PostPageView({ postData }: { postData: PostData }) {
         <title>{postData.title}</title>
         <meta
           name="twitter:image"
-          content={
-            (process.env.NEXT_PUBLIC_VERCEL_URL ??
-              process.env.DEPLOY_URL ??
-              "localhost:8080") + (postData.imageURL ?? "/images/twitter.png")
-          }
+          content={getHostname() + (postData.imageURL ?? "/images/twitter.png")}
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content="@t3dotgg" />
@@ -23,11 +28,7 @@ export default function PostPageView({ postData }: { postData: PostData }) {
         <meta property="og:description" content={postData.description} />
         <meta
           property="og:image"
-          content={
-            (process.env.NEXT_PUBLIC_VERCEL_URL ??
-              process.env.DEPLOY_URL ??
-              "localhost:8080") + (postData.imageURL ?? "/images/twitter.png")
-          }
+          content={getHostname() + (postData.imageURL ?? "/images/twitter.png")}
         />
       </Head>
       <article>
