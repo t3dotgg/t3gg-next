@@ -2,7 +2,7 @@ import Head from "next/head";
 
 export const siteTitle = "Theo Browne";
 const description =
-  "Theo Browne is a full stack engineer and React expert with years of experience working at Twitch.tv";
+  "Theo Browne is a full stack engineer and React expert. Alumni of Twitch.tv and RPI, creator of Chrometana and InSquare. Currently hacking away at tt.fm";
 
 export default function Page({
   children,
