@@ -16,7 +16,7 @@ export default function Layout({
       <div className={styles.accentOne} />
       <div className={styles.container}>
         <Head>
-          <link rel="icon" href="/icon.png" />
+          <link rel="icon" href="/favicon.svg" />
         </Head>
         <h3>Theo's Blog</h3>
         <main>{children}</main>

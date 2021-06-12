@@ -13,7 +13,7 @@ export default function Page({
   return (
     <>
       <Head>
-        <link rel="icon" href="/icon.png" />
+        <link rel="icon" href="/favicon.svg" />
         <meta name="description" content={description} />
         <meta name="twitter:image" content="https://t3.gg/images/twitter.png" />
         <meta name="twitter:card" content="summary_large_image" />
