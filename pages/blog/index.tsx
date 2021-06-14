@@ -13,8 +13,8 @@ export default function Home({ allPostsData }: { allPostsData: PostData[] }) {
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
-        <link href="/modules/prism.css" rel="stylesheet" />
         <meta name="twitter:image" content="https://t3.gg/images/twitter.png" />
+        <link href="/modules/prism.css" rel="stylesheet" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content="@t3dotgg" />
         <meta property="og:title" content={siteTitle} />
@@ -26,7 +26,6 @@ export default function Home({ allPostsData }: { allPostsData: PostData[] }) {
           <Post postData={postData} key={index} />
         ))}
       </section>
-      <script src="/modules/prism.js"></script>
     </Layout>
   );
 }

@@ -26,7 +26,6 @@ export default function PostPageView({ postData }: { postData: PostData }) {
       <article>
         <Post postData={postData} singlePostPage />
       </article>
-      <script src="/modules/prism.js"></script>
     </Layout>
   );
 }

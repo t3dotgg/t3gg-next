@@ -3,6 +3,11 @@ import Date from "./date";
 import { PostData } from "../lib/posts";
 import { getMDXComponent } from "mdx-bundler/client";
 import utilStyles from "../styles/utils.module.css";
+import { useEffect } from "react";
+import Prism from "Prismjs";
+import "prismjs/components/prism-bash.min";
+import "prismjs/components/prism-typescript.min";
+import "prismjs/components/prism-json.min";
 
 export default function Post({
   postData,
@@ -11,6 +16,9 @@ export default function Post({
   postData: PostData;
   singlePostPage?: boolean;
 }) {
+  useEffect(() => {
+    Prism.highlightAll();
+  }, []);
   const Content = getMDXComponent(postData.sourceMDX);
   return (
     <article className="prose prose-lg">
