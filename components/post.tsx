@@ -4,7 +4,7 @@ import { PostData } from "../lib/posts";
 import { getMDXComponent } from "mdx-bundler/client";
 import utilStyles from "../styles/utils.module.css";
 import { useEffect } from "react";
-import Prism from "Prismjs";
+import Prism from "prismjs";
 import "prismjs/components/prism-bash.min";
 import "prismjs/components/prism-typescript.min";
 import "prismjs/components/prism-json.min";
