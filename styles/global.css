@@ -72,3 +72,9 @@ article {
   line-height: 1.6;
   font-size: 18px;
 }
+
+code {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  background: #eeeeee;
+}
