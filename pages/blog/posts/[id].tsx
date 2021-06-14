@@ -4,15 +4,12 @@ import Head from "next/head";
 import { GetStaticProps, GetStaticPaths } from "next";
 import Post from "../../../components/post";
 
-export default function PostPageView({
-  postData,
-}: {
-  postData: PostData;
-}) {
+export default function PostPageView({ postData }: { postData: PostData }) {
   return (
     <Layout>
       <Head>
         <title>{postData.title}</title>
+        <link href="/modules/prism.css" rel="stylesheet" />
         <meta
           name="twitter:image"
           content={postData.imageURL ?? "https://t3.gg/images/twitter.png"}
@@ -27,8 +24,9 @@ export default function PostPageView({
         />
       </Head>
       <article>
-      <Post postData={postData} singlePostPage />
+        <Post postData={postData} singlePostPage />
       </article>
+      <script src="/modules/prism.js"></script>
     </Layout>
   );
 }

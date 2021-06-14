@@ -15,9 +15,9 @@ export default function Post({
   return (
     <article className="prose prose-lg">
       {generateTitle(postData.title, postData.id, !singlePostPage)}
-        <div className={utilStyles.lightText}>
-          <Date dateString={postData.date} />
-        </div>
+      <div className={utilStyles.lightText}>
+        <Date dateString={postData.date} />
+      </div>
       <Content />
     </article>
   );

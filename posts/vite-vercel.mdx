@@ -78,8 +78,8 @@ Once we have told vercel about this special command, we have to create it. Verce
 Add the following scripts in package.json
 
 ```json
-    "vercel-dev-helper": "vite --port $PORT",
-    "vdev": "vercel dev --local-config ./vercel-dev.json"
+"vercel-dev-helper": "vite --port $PORT",
+"vdev": "vercel dev --local-config ./vercel-dev.json"
 ```
 
 You may have noticed that the `vercel dev` command is pointing to a unique local config. This is because the SPA `rewrite` in our `vercel.json` _does not work with vite's dev server_.
