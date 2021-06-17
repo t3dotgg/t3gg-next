@@ -1,11 +1,13 @@
 import Head from "next/head";
-import Layout, { siteTitle } from "../components/layout";
+import Layout from "../components/layout";
 import utilStyles from "../styles/utils.module.css";
 import { GetStaticProps } from "next";
 import { getMDXComponent } from "mdx-bundler/client";
 import { getProjectsPageInfo } from "../lib/projects";
 
 const description = "Things Theo Did (Mostly Good Ones)";
+
+const siteTitle = "Theo's Projects";
 
 export default function Projects({ mdxSource }: { mdxSource: string }) {
   const Content = getMDXComponent(mdxSource);
