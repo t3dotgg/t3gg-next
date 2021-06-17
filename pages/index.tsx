@@ -17,21 +17,27 @@ const HomeBody = () => (
         <a href="https://rpi.edu">RPI</a>
       </p>
       <p>I like skateboards, music, art, and various nonsense</p>
-      <p>
-        Take a look at my <a href="https://github.com/theobr">Github</a>,{" "}
-        <a href="https://twitter.com/t3dotgg">Twitter</a>, or{" "}
-        <Link href="/projects">
-          <a>projects</a>
-        </Link>
-      </p>
-    </div>
-    <div className="home-page--content--footer">
-      <p>
-        Oh, also,{" "}
-        <Link href="/blog">
-          <a>check out my new blog</a>
-        </Link>
-      </p>
+      <p>Check out my...</p>
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        <div>
+          -{" "}
+          <Link href="/projects">
+            <a>Projects/Portfolio</a>
+          </Link>
+        </div>
+        <div>
+          -{" "}
+          <Link href="/blog">
+            <a>Blog</a>
+          </Link>
+        </div>
+        <div>
+          - <a href="https://github.com/theobr">Github</a>
+        </div>
+        <div>
+          - <a href="https://twitter.com/t3dotgg">Twitter</a>
+        </div>
+      </div>
     </div>
   </div>
 );
