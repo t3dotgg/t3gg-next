@@ -20,9 +20,9 @@ const HomeBody = () => (
       <p>
         Take a look at my <a href="https://github.com/theobr">Github</a>,{" "}
         <a href="https://twitter.com/t3dotgg">Twitter</a>, or{" "}
-        <a href="https://github.com/TheoBr/TheoBr/blob/master/about/resume.md">
-          resume
-        </a>
+        <Link href="/projects">
+          <a>projects</a>
+        </Link>
       </p>
     </div>
     <div className="home-page--content--footer">
