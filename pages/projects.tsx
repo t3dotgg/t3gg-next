@@ -12,11 +12,11 @@ import doge from "../lib/projects/images/dogecoin-simulator.png";
 import mod from "../lib/projects/images/mod-view.jpeg";
 import manager from "../lib/projects/images/stream-manager.png";
 import ttfmmobile from "../lib/projects/images/ttfm-mobile.png";
-import room from "../lib/projects/images/ttfm-mobile-room-browser.png";
 import ttfmweb from "../lib/projects/images/ttfm-web.png";
 import studio from "../lib/projects/images/twitch-studio-mac.jpeg";
+import insquare from "../lib/projects/images/insquare.jpeg";
 
-const description = "Things Theo Did (Mostly Good Ones)";
+const description = "A bunch of random things I've made";
 
 const siteTitle = "Theo's Projects";
 
@@ -31,6 +31,7 @@ export default function Projects({ mdxSource }: { mdxSource: string }) {
     ttfmmobile,
     ttfmweb,
     studio,
+    insquare,
   });
   return (
     <Layout home>

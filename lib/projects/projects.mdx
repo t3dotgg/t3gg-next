@@ -1,41 +1,8 @@
 # Projects
 
-## Personal
+_Last updated June 17th, 2021_
 
-### Dogecoin Simulator
-
-import Image from "next/image";
-import doge from "doge";
-
-<a href="https://doge.t3.gg">
-  <Image placeholder="blur" src={doge} />
-</a>
-
-Dogecoin Simulator is a web game heavily inspired by [Universal Paperclip](https://www.decisionproblem.com/paperclips/). I was curious how my "tech stack" held up under the load of a high thrash game engine, and had a lot of fun pushing the limits of the tech I was consuming.
-
-Dogecoin Simulator uses React and Zustand to define all game logic and UI. Zustand's state model allowed me to centralize all the complex game logic into a [simple, typesafe state machine](https://github.com/TheoBr/dogecoin-simulator/blob/main/src/engine/game.ts).
-
-I'm really proud of the quality of this project and the performance it maintains. [All of the code is open source, so please give it a look!](https://github.com/TheoBr/dogecoin-simulator)
-
-### Chrometana
-
-import chrome from "chrome";
-
-<a href="https://chrome.google.com/webstore/detail/chrometana-redirect-bing/kaicbfmipfpfpjmlbpejaoaflfdnabnc">
-  <Image placeholder="blur" src={chrome} />
-</a>
-
-Chrometana is poorly maintained Chrome extension I released on the launch of Windows 10. I was frustrated as hell by Cortana only searching Bing, so I hacked together a script to redirect those searches. This extension has had over 1 million installations and is still regularly featured in reporting from The Verge, Wall Street Journal, and more. All that said, it's a tiny script that redirects Bing searches that I wrote 5 years ago and haven't touched much since.
-
-### Personal Site and Blog
-
-<a href="https://t3.gg">
-  <img src="/images/projects/V1.svg" />
-</a>
-
-I've always enjoyed using my [personal site](https://t3.gg/) and [blog](https://t3.gg/blog) as a place to experiment with new tech and ideas. The most recent rendition is a [Next.JS](https://nextjs.org/) and Typescript site with mdx integrations for the blog (via [mdx-bundler](https://github.com/kentcdodds/mdx-bundler)), all hosted on [Vercel](https://vercel.com/). Oh also - the animations are vanilla JS this time :)
-
-Previously, my personal site was built using [Gatsby](https://www.gatsbyjs.com/) and Typescript, with [PaperJS](http://paperjs.org/) for animation. I found this setup oddly frustrating to build and maintain, enough so that I [published a template to prevent others from having the same issues](https://github.com/TheoBr/minimal-gatsby-typescript-starter)
+I'm thankful I've had the opportunity to build a lot of cool stuff. These are some of the things I've made that I'm most proud of. Most of these things still exist, click the image to see if it does 😊
 
 ## Turntable - tt.fm
 
@@ -173,6 +140,55 @@ Role: Full Stack engineer, Creative and Emerging Content team
 Mission Control was an elixir-based toolset for maintaining and streaming marathon-style content on Twitch. These tools were used to run all the marathons on Twitch from Bob Ross to Pokemon until March 2019.
 
 The tools I created were used to injest content from various broadcasting networks, transcode them to standardized formats, and stream them to twitch. Our schedules expected the ability to cut mid-asset to insert video ads, so our architecture dumped all video content into chunked transport streams, which were fed into FFMPEG to stream to Twitch. One of our engineers [gave an awesome talk at ElixirConf on this architecture](https://www.youtube.com/watch?v=eNe5dmRP9Cc)
+
+## Personal
+
+### Dogecoin Simulator
+
+import Image from "next/image";
+import doge from "doge";
+
+<a href="https://doge.t3.gg">
+  <Image placeholder="blur" src={doge} />
+</a>
+
+Dogecoin Simulator is a web game heavily inspired by [Universal Paperclip](https://www.decisionproblem.com/paperclips/). I was curious how my "tech stack" held up under the load of a high thrash game engine, and had a lot of fun pushing the limits of the tech I was consuming.
+
+Dogecoin Simulator uses React and Zustand to define all game logic and UI. Zustand's state model allowed me to centralize all the complex game logic into a [simple, typesafe state machine](https://github.com/TheoBr/dogecoin-simulator/blob/main/src/engine/game.ts).
+
+I'm really proud of the quality of this project and the performance it maintains. [All of the code is open source, so please give it a look!](https://github.com/TheoBr/dogecoin-simulator)
+
+### Chrometana
+
+import chrome from "chrome";
+
+<a href="https://chrome.google.com/webstore/detail/chrometana-redirect-bing/kaicbfmipfpfpjmlbpejaoaflfdnabnc">
+  <Image placeholder="blur" src={chrome} />
+</a>
+
+Chrometana is poorly maintained Chrome extension I released on the launch of Windows 10. I was frustrated as hell by Cortana only searching Bing, so I hacked together a script to redirect those searches. This extension has had over 1 million installations and is still regularly featured in reporting from The Verge, Wall Street Journal, and more. All that said, it's a tiny script that redirects Bing searches that I wrote 5 years ago and haven't touched much since.
+
+### InSquare
+
+import insquare from "insquare";
+
+<a href="https://github.com/theobr/insquare">
+  <Image src={insquare} />
+</a>
+
+Remember Pebble? I was a big fan of those early smartwatches. I developed [InSquare](https://github.com/theobr/insquare), a minimal watchface for the Pebble and Pebble Steel.
+
+This watchface still gets a surprising number of downloads from Pebble holdouts. You can [get it on Rebble.io here](https://apps.rebble.io/en_US/application/54d9664963eb418376000045?query=InSquare&section=watchfaces)
+
+### Personal Site and Blog
+
+<a href="https://t3.gg">
+  <img src="/images/projects/V1.svg" />
+</a>
+
+I've always enjoyed using my [personal site](https://t3.gg/) and [blog](https://t3.gg/blog) as a place to experiment with new tech and ideas. The most recent rendition is a [Next.JS](https://nextjs.org/) and Typescript site with mdx integrations for the blog (via [mdx-bundler](https://github.com/kentcdodds/mdx-bundler)), all hosted on [Vercel](https://vercel.com/). Oh also - the animations are vanilla JS this time :)
+
+Previously, my personal site was built using [Gatsby](https://www.gatsbyjs.com/) and Typescript, with [PaperJS](http://paperjs.org/) for animation. I found this setup oddly frustrating to build and maintain, enough so that I [published a template to prevent others from having the same issues](https://github.com/TheoBr/minimal-gatsby-typescript-starter)
 
 ## RPI
 

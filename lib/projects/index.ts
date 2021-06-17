@@ -34,6 +34,7 @@ export async function getProjectsPageInfo() {
       ttfmmobile: "ttfmmobile",
       ttfmweb: "ttfmweb",
       studio: "studio",
+      insquare: "insquare",
     },
   });
 
