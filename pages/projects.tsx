@@ -6,14 +6,32 @@ import { getMDXComponent } from "mdx-bundler/client";
 import { getProjectsPageInfo } from "../lib/projects";
 
 import Image from "next/image";
+import copo from "../lib/projects/images/channel-points-queue.png";
+import chrome from "../lib/projects/images/chrometana.jpeg";
 import doge from "../lib/projects/images/dogecoin-simulator.png";
+import mod from "../lib/projects/images/mod-view.jpeg";
+import manager from "../lib/projects/images/stream-manager.png";
+import ttfmmobile from "../lib/projects/images/ttfm-mobile.png";
+import room from "../lib/projects/images/ttfm-mobile-room-browser.png";
+import ttfmweb from "../lib/projects/images/ttfm-web.png";
+import studio from "../lib/projects/images/twitch-studio-mac.jpeg";
 
 const description = "Things Theo Did (Mostly Good Ones)";
 
 const siteTitle = "Theo's Projects";
 
 export default function Projects({ mdxSource }: { mdxSource: string }) {
-  const Content = getMDXComponent(mdxSource, { image: Image, doge: doge });
+  const Content = getMDXComponent(mdxSource, {
+    image: Image,
+    copo,
+    chrome,
+    doge,
+    mod,
+    manager,
+    ttfmmobile,
+    ttfmweb,
+    studio,
+  });
   return (
     <Layout home>
       <Head>
