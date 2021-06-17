@@ -5,12 +5,15 @@ import { GetStaticProps } from "next";
 import { getMDXComponent } from "mdx-bundler/client";
 import { getProjectsPageInfo } from "../lib/projects";
 
+import Image from "next/image";
+import doge from "../lib/projects/images/dogecoin-simulator.png";
+
 const description = "Things Theo Did (Mostly Good Ones)";
 
 const siteTitle = "Theo's Projects";
 
 export default function Projects({ mdxSource }: { mdxSource: string }) {
-  const Content = getMDXComponent(mdxSource);
+  const Content = getMDXComponent(mdxSource, { image: Image, doge: doge });
   return (
     <Layout home>
       <Head>

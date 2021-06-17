@@ -23,7 +23,9 @@ if (process.platform === "win32") {
 
 export async function getProjectsPageInfo() {
   const fileContents = fs.readFileSync(pathToMdx, "utf8");
-  const { code, frontmatter } = await bundleMDX(fileContents);
+  const { code, frontmatter } = await bundleMDX(fileContents, {
+    globals: { "next/image": "image", doge: "doge" },
+  });
 
   return code;
 }
