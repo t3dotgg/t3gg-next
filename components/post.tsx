@@ -20,16 +20,52 @@ export default function Post({
     Prism.highlightAll();
   }, []);
   const Content = getMDXComponent(postData.sourceMDX);
+  const showReadMore = !singlePostPage && postData.readMore;
   return (
     <article className="prose prose-lg">
       {generateTitle(postData.title, postData.id, !singlePostPage)}
       <div className={utilStyles.lightText}>
         <Date dateString={postData.date} />
       </div>
-      <Content />
+      <div
+        style={{
+          maxHeight: showReadMore ? 600 : undefined,
+          overflow: "hidden",
+          position: "relative",
+          paddingBottom: showReadMore ? "1rem" : undefined,
+          marginBottom: "1rem",
+        }}
+      >
+        <Content />
+        {showReadMore && <ReadMore id={postData.id} />}
+      </div>
     </article>
   );
 }
+
+const ReadMore: React.FC<{ id: string }> = ({ id }) => {
+  return (
+    <Link href={`/blog/posts/${id}`}>
+      <div
+        style={{
+          display: "flex",
+          position: "absolute",
+          bottom: 0,
+          width: "100%",
+          fontSize: "1.3rem",
+          height: 200,
+          justifyContent: "center",
+          alignItems: "flex-end",
+          backgroundImage:
+            "linear-gradient(to bottom, rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 1.0) 85%)",
+          cursor: "pointer",
+        }}
+      >
+        <a style={{ fontWeight: 500 }}>Continue Reading</a>
+      </div>
+    </Link>
+  );
+};
 
 const generateTitle = (title: string, id: string, showLink: boolean) => {
   if (showLink)
