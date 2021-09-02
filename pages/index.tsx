@@ -1,54 +1,53 @@
-import Link from "next/link";
-import { AnimatedBackground } from "../components/animated-background";
 import Page from "../components/page";
-
-const HomeBody = () => (
-  <div className="home-page--content">
-    <div className="home-page--content--header">
-      <h1>Hiya</h1>
-      <p>{"I'm Theo, and I like to build things"}</p>
-      <p>
-        {"Full stack engineer at "}
-        <a href="https://tt.fm">Turntable</a>
-        {" since February 2021"}
-      </p>
-      <p>
-        Alumni of <a href="https://twitch.tv">Twitch</a> and{" "}
-        <a href="https://rpi.edu">RPI</a>
-      </p>
-      <p>I like skateboards, music, art, and various nonsense</p>
-      <p>Check out my...</p>
-      <div style={{ display: "flex", flexDirection: "column" }}>
-        <div>
-          -{" "}
-          <Link href="/projects">
-            <a>Projects/Portfolio</a>
-          </Link>
-        </div>
-        <div>
-          -{" "}
-          <Link href="/blog">
-            <a>Blog</a>
-          </Link>
-        </div>
-        <div>
-          - <a href="https://github.com/theobr">Github</a>
-        </div>
-        <div>
-          - <a href="https://twitter.com/t3dotgg">Twitter</a>
-        </div>
-      </div>
-    </div>
-  </div>
-);
+import Image from "next/image";
+import Logo from "../assets/t3-block.svg";
+import RoundLogo from "../assets/Round Text Logo.svg";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <Page>
-      <div className="home-page">
-        <HomeBody />
+      <div className="bg-gray-600 bg-opacity-50">
+        <div className="flex flex-col items-center min-h-screen animate-fade-in-down text-gray-800 relative">
+          <div
+            className="flex flex-col justify-center items-center py-8 px-4 w-full shadow-xl bg-gray-900 bg-gradient-to-tr from-gray-900 to-gray-800 text-gray-200"
+            style={{ fontFamily: "Inter" }}
+          >
+            <Image src={Logo} className="rounded-xl" loading="eager" />
+            <div className="text-4xl mt-4 font-medium">Welcome to T3 Tools</div>
+            <p className="text-gray-400">
+              Built by{" "}
+              <Link href="/me">
+                <a>Theo</a>
+              </Link>
+            </p>
+          </div>
+          <div className="pt-8" />
+
+          <div className="flex flex-col justify-center max-w-2xl px-4 md:max-w-5xl ">
+            <h2 className="text-4xl font-medium text-center">
+              We Build Things For Creators
+            </h2>
+            <p className="text-center italic">Some of them work!</p>
+            <div className="pt-8" />
+            <a href="https://round.t3.gg">
+              <div className="bg-gray-800 p-4 rounded-xl flex flex-col justify-center text-gray-200">
+                <Image
+                  src={RoundLogo}
+                  loading="eager"
+                  alt="Round - for video calls (logo)"
+                  width={200}
+                  height={60}
+                />
+                <div className="pt-4" />
+                <p className="text-center">
+                  The best way to have multiple people on your stream.
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
-      <AnimatedBackground />
     </Page>
   );
 }
