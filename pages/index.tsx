@@ -3,10 +3,22 @@ import Image from "next/image";
 import Logo from "../assets/t3-block.svg";
 import RoundLogo from "../assets/Round Text Logo.svg";
 import Link from "next/link";
+import Head from "next/head";
+
+const siteTitle = "T3 Tools";
+const description = "We build things for creators.";
 
 export default function Home() {
   return (
     <Page>
+      <Head>
+        <link rel="icon" href="/favicon.svg" />
+        <meta name="description" content={description} />
+        <meta property="og:title" content={siteTitle} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content="https://t3.gg/images/twitter.png" />
+        <title>{siteTitle}</title>
+      </Head>
       <div className="bg-gray-600 bg-opacity-50">
         <div className="flex flex-col items-center min-h-screen animate-fade-in-down text-gray-800 relative">
           <div
