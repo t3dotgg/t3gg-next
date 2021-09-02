@@ -11,11 +11,6 @@ body {
   font-family: -apple-system, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
-h1 {
-  font-size: 2rem;
-  margin: 0;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -28,9 +23,18 @@ img {
 a {
   color: #746f80;
   text-decoration: none;
+  cursor: pointer;
 }
 a:hover {
   text-decoration: underline;
+}
+
+.no-line-link {
+  text-decoration: none !important;
+}
+
+.no-line-link:hover {
+  text-decoration: underline !important;
 }
 
 .home-page {
@@ -70,18 +74,6 @@ a:hover {
   z-index: -1;
   top: 0;
   right: 0;
-}
-
-blockquote {
-  border-left: 0.3em solid rgba(0, 0, 0, 0.5);
-  padding: 0 1rem;
-  margin: 1rem 1rem;
-  font-style: italic;
-}
-
-article {
-  line-height: 1.6;
-  font-size: 18px;
 }
 
 code {
