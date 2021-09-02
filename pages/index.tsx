@@ -1,54 +1,25 @@
-import Link from "next/link";
-import { AnimatedBackground } from "../components/animated-background";
 import Page from "../components/page";
-
-const HomeBody = () => (
-  <div className="home-page--content">
-    <div className="home-page--content--header">
-      <h1>Hiya</h1>
-      <p>{"I'm Theo, and I like to build things"}</p>
-      <p>
-        {"Full stack engineer at "}
-        <a href="https://tt.fm">Turntable</a>
-        {" since February 2021"}
-      </p>
-      <p>
-        Alumni of <a href="https://twitch.tv">Twitch</a> and{" "}
-        <a href="https://rpi.edu">RPI</a>
-      </p>
-      <p>I like skateboards, music, art, and various nonsense</p>
-      <p>Check out my...</p>
-      <div style={{ display: "flex", flexDirection: "column" }}>
-        <div>
-          -{" "}
-          <Link href="/projects">
-            <a>Projects/Portfolio</a>
-          </Link>
-        </div>
-        <div>
-          -{" "}
-          <Link href="/blog">
-            <a>Blog</a>
-          </Link>
-        </div>
-        <div>
-          - <a href="https://github.com/theobr">Github</a>
-        </div>
-        <div>
-          - <a href="https://twitter.com/t3dotgg">Twitter</a>
-        </div>
-      </div>
-    </div>
-  </div>
-);
+import Image from "next/image";
+import Logo from "../assets/t3-block.svg";
 
 export default function Home() {
   return (
     <Page>
-      <div className="home-page">
-        <HomeBody />
+      <div className="bg-gray-900 bg-gradient-to-tr from-gray-900 to-gray-800">
+        <div className="flex flex-col min-h-screen animate-fade-in-down text-gray-200 relative">
+          <div className="top-0 sticky px-2 py-2 bg-gray-800 flex justify-between items-center shadow-lg z-50 w-full">
+            <Image
+              loading="eager"
+              src={Logo}
+              alt="logo"
+              width={60}
+              height={60}
+            />
+          </div>
+          <div className="py-4" />
+          <div className="flex flex-col p-8 max-w-5xl">Welcome to T3 Tools</div>
+        </div>
       </div>
-      <AnimatedBackground />
     </Page>
   );
 }
