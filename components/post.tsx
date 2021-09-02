@@ -21,7 +21,7 @@ export default function Post({
   const Content = getMDXComponent(postData.sourceMDX);
   const showReadMore = !singlePostPage && postData.readMore;
   return (
-    <article className="prose lg:prose-xl">
+    <article className="prose prose-lg lg:prose-xl">
       {generateTitle(postData.title, postData.id, !singlePostPage)}
       <div className="">
         <Date dateString={postData.date} />
