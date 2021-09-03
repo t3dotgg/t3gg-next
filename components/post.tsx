@@ -21,9 +21,9 @@ export default function Post({
   const Content = getMDXComponent(postData.sourceMDX);
   const showReadMore = !singlePostPage && postData.readMore;
   return (
-    <article className="prose prose-lg lg:prose-xl">
+    <article className="prose prose-lg lg:prose-xl mb-8">
       {generateTitle(postData.title, postData.id, !singlePostPage)}
-      <div className="">
+      <div className="m-0 p-0">
         <Date dateString={postData.date} />
       </div>
       <div
@@ -70,11 +70,23 @@ const generateTitle = (title: string, id: string, showLink: boolean) => {
   if (showLink)
     return (
       <Link href={`/blog/posts/${id}`}>
-        <h2>
-          <a className="no-line-link">{title}</a>
-        </h2>
+        <a className="no-line-link m-0">
+          <h2
+            className="m-0 p-0 font-bold"
+            style={{ marginBlockEnd: 0, marginBlockStart: "1rem" }}
+          >
+            {title}
+          </h2>
+        </a>
       </Link>
     );
 
-  return <h2>{title}</h2>;
+  return (
+    <h2
+      className="m-0 p-0 font-bold"
+      style={{ marginBlockEnd: 0, marginBlockStart: "1rem" }}
+    >
+      {title}
+    </h2>
+  );
 };
