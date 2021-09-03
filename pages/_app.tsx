@@ -4,7 +4,7 @@ import PlausibleProvider from "next-plausible";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <PlausibleProvider domain="t3.gg">
+    <PlausibleProvider domain="t3.gg" trackOutboundLinks>
       <Component {...pageProps} />
     </PlausibleProvider>
   );
