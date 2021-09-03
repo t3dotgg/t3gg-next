@@ -45,7 +45,7 @@ export default function Projects({ mdxSource }: { mdxSource: string }) {
         <meta property="og:description" content={description} />
         <meta property="og:image" content="https://t3.gg/images/twitter.png" />
       </Head>
-      <article className="prose prose-lg">
+      <article className="prose prose-lg lg:prose-xl">
         <section className={utilStyles.padding1px}>
           <Content />
         </section>

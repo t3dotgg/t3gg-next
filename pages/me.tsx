@@ -5,7 +5,7 @@ import Page from "../components/page";
 const HomeBody = () => (
   <div className="home-page--content">
     <div className="home-page--content--header">
-      <h1>Hiya</h1>
+      <h1 className="font-bold text-2xl py-4">Hiya</h1>
       <p>{"I'm Theo, and I like to build things"}</p>
       <p>
         {"Full stack engineer at "}
@@ -18,7 +18,7 @@ const HomeBody = () => (
       </p>
       <p>I like skateboards, music, art, and various nonsense</p>
       <p>Check out my...</p>
-      <div style={{ display: "flex", flexDirection: "column" }}>
+      <div className="flex flex-col">
         <div>
           -{" "}
           <Link href="/projects">
