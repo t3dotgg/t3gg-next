@@ -40,8 +40,7 @@ export default function Home() {
             <h2 className="text-4xl font-medium text-center">
               We Build Things For Creators
             </h2>
-            <p className="text-center italic">Some of them work!</p>
-            <div className="pt-8" />
+            <div className="pt-4" />
             <a href="https://round.t3.gg">
               <div className="bg-gray-800 p-4 rounded-xl flex flex-col justify-center text-gray-200">
                 <Image
