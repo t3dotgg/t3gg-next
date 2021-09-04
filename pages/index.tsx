@@ -31,7 +31,9 @@ export default function Home() {
               loading="eager"
               alt="T3 Tools logo"
             />
-            <div className="text-4xl mt-4 font-medium">Welcome to T3 Tools</div>
+            <div className="text-4xl mt-4 font-medium text-center">
+              Welcome to T3 Tools
+            </div>
             <p className="text-gray-400">
               Built by{" "}
               <Link href="/me">
