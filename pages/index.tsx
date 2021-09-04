@@ -10,7 +10,7 @@ const description = "We build things for creators.";
 
 export default function Home() {
   return (
-    <Page>
+    <>
       <Head>
         <link rel="icon" href="/favicon.svg" />
         <meta name="description" content={description} />
@@ -65,6 +65,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </Page>
+    </>
   );
 }
