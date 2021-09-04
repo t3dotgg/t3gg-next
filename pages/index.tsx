@@ -25,7 +25,12 @@ export default function Home() {
             className="flex flex-col justify-center items-center py-8 px-4 w-full shadow-xl bg-gray-900 bg-gradient-to-tr from-gray-900 to-gray-800 text-gray-200"
             style={{ fontFamily: "Inter" }}
           >
-            <Image src={Logo} className="rounded-xl" loading="eager" />
+            <Image
+              src={Logo}
+              className="rounded-xl"
+              loading="eager"
+              alt="T3 Tools logo"
+            />
             <div className="text-4xl mt-4 font-medium">Welcome to T3 Tools</div>
             <p className="text-gray-400">
               Built by{" "}
@@ -45,7 +50,6 @@ export default function Home() {
               <div className="bg-gray-800 p-4 rounded-xl flex flex-col justify-center text-gray-200">
                 <Image
                   src={RoundLogo}
-                  loading="eager"
                   alt="Round - for video calls (logo)"
                   width={200}
                   height={60}
