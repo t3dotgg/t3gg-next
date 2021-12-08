@@ -52,3 +52,8 @@ export default function Home() {
     </Page>
   );
 }
+
+export const config = {
+  unstable_JsPreload: false,
+  unstable_runtimeJS: false,
+};

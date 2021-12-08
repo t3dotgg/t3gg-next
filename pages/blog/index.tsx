@@ -38,3 +38,8 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   };
 };
+
+export const config = {
+  unstable_JsPreload: false,
+  unstable_runtimeJS: false,
+};
