@@ -3,81 +3,39 @@
 @tailwind utilities;
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+/* ./styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, Helvetica Neue, Helvetica, Arial, sans-serif;
+  background-color: #e8dcff;
+  height: 100%;
 }
 
-* {
-  box-sizing: border-box;
+/* gdi next */
+#__next {
+  height: 100%;
 }
 
-img {
-  max-width: 100%;
-  display: block;
+.bg-blend {
+  background-image: linear-gradient(
+    to top,
+    rgba(232, 220, 255, 1) 0%,
+    rgba(232, 220, 255, 0.3) 50%,
+    rgba(232, 220, 255, 0.15) 65%,
+    rgba(232, 220, 255, 0.075) 75.5%,
+    rgba(232, 220, 255, 0.037) 82.85%,
+    rgba(232, 220, 255, 0.019) 88%,
+    rgba(232, 220, 255, 0) 100%
+  );
 }
-
-a {
-  color: #746f80;
-  text-decoration: none;
-  cursor: pointer;
+.animated-bg {
+  background-image: url(/assets/animated-bg.svg);
+  background-size: cover;
+  margin-top: -20px;
 }
-a:hover {
-  text-decoration: underline;
-}
-
-.no-line-link {
-  text-decoration: none !important;
-}
-
-.no-line-link:hover {
-  text-decoration: underline !important;
-}
-
-.home-page {
-  width: 100vw;
-  height: 100vh;
-}
-
-.home-page--content {
-  /* Positioning within page */
-  min-width: 300px;
-  width: max-content;
-  max-width: 90vw;
-  max-height: 90%;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  /* Positioning of children */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 400px;
-
-  /* Styling */
-  border: 1px solid black;
-  padding: 2rem;
-  border-radius: 0.5rem;
-  background-color: rgba(255, 255, 255, 0.9);
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding-box;
-  background-clip: padding-box;
-}
-
-.animation {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  right: 0;
-}
-
-code {
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
-  background: #eeeeee;
+.special-height {
+  min-height: -webkit-fill-available;
 }
