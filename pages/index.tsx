@@ -71,3 +71,7 @@ export default function Home() {
     </>
   );
 }
+
+export const config = {
+  unstable_JsPreload: false,
+};

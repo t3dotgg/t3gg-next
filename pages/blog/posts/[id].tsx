@@ -46,3 +46,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     },
   };
 };
+
+export const config = {
+  unstable_JsPreload: false,
+};
